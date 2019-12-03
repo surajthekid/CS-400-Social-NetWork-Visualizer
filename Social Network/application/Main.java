@@ -108,7 +108,7 @@ public class Main extends Application {
 	private HBox addUserButton(HBox UIButtons) {
 		//TODO: Check character whether is valid
 		Button addUB = new Button("Add");
-		TextField user = new TextField();
+		TextField user = new TextField();		
 		user.setPromptText("username");
 		UIButtons.getChildren().addAll(addUB, user);
 		addUB.setOnAction(e->{
@@ -133,12 +133,9 @@ public class Main extends Application {
 		UIButtons.setSpacing(5.0); // horizontal space between buttons
 		
 		HBox addUserBox = addUserButton(UIButtons);
-		grid.add(UIButtons, 1, 1);
-		UIButtons.getChildren().clear();
+		grid.add(addUserBox, 1, 2);
 		
-		
-		
-		
+		//UIButtons.getChildren().clear();
 		
 		Label partName = new Label("Control Panel");
 		Label userName = new Label("User name:");
@@ -147,13 +144,14 @@ public class Main extends Application {
 		TextField pfPwd = new TextField();
 
 		// Add and set location on the grid
-		UIButtons.getChildren().addAll(btSubmit, btClear, btExit);
+		//UIButtons.getChildren().addAll(btSubmit, btClear, btExit);
 
 		Button loadButton = setupLoadWriteButton(true); // TODO: Call back end method
 		Button writeButton = setupLoadWriteButton(false); // TODO: Call back end method
 
 		grid.add(loadButton, 1, 4);
 		grid.add(writeButton, 1, 6);
+		
 
 		return grid;
 	}
